@@ -4,7 +4,7 @@
 исключительно массивами.
 */
 
-void PrintArray(string[] array) // печать string массива
+void PrintArray(string[] array)
 {
     Console.Write("{ ");
     for (int i = 0; i < array.Length; i++)
@@ -39,7 +39,7 @@ string[] СreateFilteredArray(string[] array, int requiredLength = 3)
 string[] MakeUserArray()
 {
     string stringOfWords = String.Empty;
-    string inputString = String.Empty;
+    string inputedString = String.Empty;
     int iterationCounter = 1;
 
     System.Console.WriteLine("Вас приветствует Мастер создания массива строк.\nПосле ввода всех строк оставьте строку пустой и нажмите Enter.");
@@ -47,19 +47,19 @@ string[] MakeUserArray()
     while (true)
     {
         Console.Write($"{iterationCounter}. Введите строку >: ");
-        inputString = Console.ReadLine();
+        inputedString = Console.ReadLine();
 
-        if (inputString == "")
+        if (inputedString == "")
         {
             break;
         }
         else if (iterationCounter == 1 )
         {
-            stringOfWords += inputString;
+            stringOfWords += inputedString;
         }
         else
         {
-            stringOfWords += "¶" + inputString;
+            stringOfWords += "¶" + inputedString;
         }
 
         iterationCounter++;
@@ -68,8 +68,18 @@ string[] MakeUserArray()
     return stringOfWords.Split("¶");
 }
 
-//string[] preCreatedArray = {"hello", "2", "world", ":-)"};
-//PrintArray(preCreatedArray);
-//PrintArray(СreateFilteredArray(preCreatedArray));
+// 1. Работа с предсозданным массивом строк.
+/*
+string[] preCreatedArray = {"hello", "2", "world", ":-)"};
+PrintArray(preCreatedArray);
+string[] filteredArray = СreateFilteredArray(preCreatedArray);
+PrintArray(filteredArray);
+*/
 
-//PrintArray(MakeUserArray());
+// 2. Работа с созданным пользователем массивом строк.
+/*
+string[] userArray = MakeUserArray();
+PrintArray(userArray);
+string[] filteredArray = СreateFilteredArray(userArray);
+PrintArray(filteredArray);
+*/
