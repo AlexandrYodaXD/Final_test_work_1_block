@@ -36,9 +36,41 @@ string[] СreateSortedArray(string[] array, int requiredLength = 3)
     return sortedArray;
 }
 
+string[] MakeUserArray()
+{
+    string stringOfWords = String.Empty;
+    string inputString = String.Empty;
+    int iterationCounter = 1;
 
+    System.Console.WriteLine("Вас приветствует Мастер создания массива строк.\nПосле ввода всех строк оставьте строку пустой и нажмите Enter.");
+
+    while (true)
+    {
+        Console.Write($"{iterationCounter}. Введите строку >: ");
+        inputString = Console.ReadLine();
+
+        if (inputString == "")
+        {
+            break;
+        }
+        else if (iterationCounter == 1 )
+        {
+            stringOfWords += inputString;
+        }
+        else
+        {
+            stringOfWords += "¶" + inputString;
+        }
+
+        iterationCounter++;
+    }
+
+    return stringOfWords.Split("¶");
+}
 
 string[] arr = {"hello", "2", "world", ":-)"};
 
 //PrintArray(arr);
 //PrintArray(СreateSortedArray(arr));
+
+PrintArray(MakeUserArray());
