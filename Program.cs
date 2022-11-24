@@ -16,7 +16,7 @@ void PrintArray(string[] array) // печать string массива
     Console.WriteLine(" }\n");
 }
 
-string[] СreateSortedArray(string[] array, int requiredLength = 3)
+string[] СreateFilteredArray(string[] array, int requiredLength = 3)
 {
     string trueIndexes = string.Empty;
     for (int i = 0; i < array.Length; i++)
@@ -68,9 +68,8 @@ string[] MakeUserArray()
     return stringOfWords.Split("¶");
 }
 
-string[] arr = {"hello", "2", "world", ":-)"};
+//string[] preCreatedArray = {"hello", "2", "world", ":-)"};
+//PrintArray(preCreatedArray);
+//PrintArray(СreateFilteredArray(preCreatedArray));
 
-//PrintArray(arr);
-//PrintArray(СreateSortedArray(arr));
-
-PrintArray(MakeUserArray());
+//PrintArray(MakeUserArray());
