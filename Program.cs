@@ -23,17 +23,17 @@ string[] СreateFilteredArray(string[] array, int requiredLength = 3)
     {
         if (array[i].Length <= requiredLength)
         {
-            trueIndexes += $"{i}";
+            trueIndexes += i.ToString();
         }
     }
 
-    string[] sortedArray = new string[trueIndexes.Length];
-    for (int i = 0; i < sortedArray.Length; i++)
+    string[] filteredArray = new string[trueIndexes.Length];
+    for (int i = 0; i < filteredArray.Length; i++)
     {
-        sortedArray[i] = array[int.Parse(trueIndexes[i].ToString())]; // приводим trueIndexes[i] к string, затем полученное значение приводим к int и используем как индекс строки.
+        filteredArray[i] = array[int.Parse(trueIndexes[i].ToString())]; // приводим trueIndexes[i] к string, затем полученное значение приводим к int и используем как индекс строки.
     }
 
-    return sortedArray;
+    return filteredArray;
 }
 
 string[] MakeUserArray()
